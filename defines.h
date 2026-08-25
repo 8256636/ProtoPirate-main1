@@ -1,9 +1,5 @@
 #pragma once
 
-#define ENABLE_TIMING_TUNER_SCENE
-#define ENABLE_SUB_DECODE_SCENE
-#define ENABLE_EMULATE_FEATURE
-
 #if defined(ENABLE_EMULATE_FEATURE) && !defined(PROTOPIRATE_PROTOCOL_RX_ONLY)
 #define PROTOPIRATE_WITH_ENCODER 1
 #else
@@ -16,7 +12,6 @@
 #define PROTOPIRATE_WITH_DECODER 0
 #endif
 
-// Disable all FURI log output
 #define REMOVE_LOGS
 
 #ifdef REMOVE_LOGS
