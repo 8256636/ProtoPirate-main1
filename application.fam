@@ -15,6 +15,12 @@ _MAIN_APP_SOURCES = [
     "!raw_file_reader.c",
 ]
 
+c_defines_main = []
+if _ENABLE_TIMING_TUNER:
+    c_defines_main.append("ENABLE_TIMING_TUNER_SCENE")
+if _ENABLE_EMULATE:
+    c_defines_main.append("ENABLE_EMULATE_FEATURE")
+
 if not _ENABLE_TIMING_TUNER:
     _MAIN_APP_SOURCES += [
         "!protopirate_scene_timing_tuner.c",
@@ -41,6 +47,7 @@ App(
     fap_icon_assets="images",
     fap_file_assets="keystore",
     sources=_MAIN_APP_SOURCES,
+    cdefines=c_defines_main,
 )
 
 # --- RX protocol plugins ---
